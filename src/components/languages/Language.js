@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Table } from '@material-ui/core';
+import { TableHead } from '@material-ui/core';
+import { TableCell } from '@material-ui/core';
+import { TableBody } from '@material-ui/core';
+import { TableRow } from '@material-ui/core';
+import { Table } from '@material-ui/core';
+import { Table } from '@material-ui/core';
 import languagesJSON from './languages.json';
 
 function Language({
@@ -12,8 +18,10 @@ function Language({
   return (
       <Table>
         <TableHead>
-          <TableCell>Attribute</TableCell>
-          <TableCell>Value</TableCell>
+          <TableRow>
+            <TableCell>Attribute</TableCell>
+            <TableCell>Value</TableCell>
+          </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
@@ -121,5 +129,5 @@ const styles = theme => ({
 });
 
 export default withStyles(styles)(Language);
-export const languages = getLanguages();
+//export const languages = getLanguages();
 //export const gatewayLanguages = getGatewayLanguages();
