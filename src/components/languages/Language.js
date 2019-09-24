@@ -6,8 +6,6 @@ import { TableHead } from '@material-ui/core';
 import { TableCell } from '@material-ui/core';
 import { TableBody } from '@material-ui/core';
 import { TableRow } from '@material-ui/core';
-import { Table } from '@material-ui/core';
-import { Table } from '@material-ui/core';
 import languagesJSON from './languages.json';
 
 function Language({
