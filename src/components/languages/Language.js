@@ -12,7 +12,7 @@ function Language({
   name,
 }) {
   let _lang;
-  _lang = getLanguage(name)
+  _lang = getLanguage({name})
   return (
       <Table>
         <TableHead>
@@ -24,43 +24,39 @@ function Language({
         <TableBody>
           <TableRow>
             <TableCell>Language ID</TableCell>
-            <TableCell>_lang.languageId</TableCell>
+            <TableCell>{_lang.languageId}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Language Name</TableCell>
-            <TableCell>_lang.languageName</TableCell>
+            <TableCell>{_lang.languageName}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Region</TableCell>
-            <TableCell>_lang.region</TableCell>
+            <TableCell>{_lang.region}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Is Gateway?</TableCell>
-            <TableCell>_lang.gateway</TableCell>
+            <TableCell>{_lang.gateway}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Country</TableCell>
-            <TableCell>_lang.country</TableCell>
+            <TableCell>{_lang.country}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Localized</TableCell>
-            <TableCell>_lang.localized</TableCell>
+            <TableCell>{_lang.localized}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Direction</TableCell>
-            <TableCell>_lang.direction</TableCell>
+            <TableCell>{_lang.direction}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Aliases</TableCell>
-            <TableCell>_lang.aliases</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Aliases</TableCell>
-            <TableCell>_lang.aliases</TableCell>
+            <TableCell>{_lang.aliases}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Countries</TableCell>
-            <TableCell>_lang.countries</TableCell>
+            <TableCell>{_lang.countries}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -115,7 +111,7 @@ export const formatLanguage = ({language}) => {
 Language.propTypes = {
   /** @ignore */
   classes: PropTypes.object.isRequired,
-  /** The name of the person to say hello to. */
+  /** The name of the language to display. */
   name: PropTypes.string.isRequired,
   /** The overriding CSS for this component */
   style: PropTypes.object,
