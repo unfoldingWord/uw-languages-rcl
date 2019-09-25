@@ -7,7 +7,7 @@ import { TableCell } from '@material-ui/core';
 import { TableBody } from '@material-ui/core';
 import { TableRow } from '@material-ui/core';
 
-import {getLanguage} from '../core/langnames.js'
+import {getLanguage} from '../../core/langnames.js'
 
 function Language({
   classes,

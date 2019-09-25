@@ -34,5 +34,20 @@ It will be displayed as a *property* table, with two columns:
 - Property Name
 - Property Value
 
-In some cases the value will be a list, such as the countries that a
-in which a language is spoken.
+For example, using above:
+
+|Attribute|Value|
+|---------|:----|
+|Language ID|zzj|
+|Language Name|Zhuang, Zuojiang|
+|Region|Asia|
+|Is Gateway?|false|
+|Country|CN|
+|Localized|\u5de6\u6c5f|
+|Direction|ltr|
+|Aliases|Ken Tho, Longyin, Longzhou, Pho Thai, Southern Zhuang, Zhuangyu nanbu fangyan Zuojiang tuyu, Nung Chao|
+|Countries|CN|
+
+
+**In some cases the value will be a list, such as the countries that a
+in which a language is spoken.**

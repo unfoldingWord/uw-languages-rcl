@@ -25,15 +25,7 @@ let sections = [
   },
   {
     name: 'Core',
-    components: () => {
-      const componentNames = [
-        'core',
-      ];
-      return componentNames.map(componentName => {
-        const filename = upperFirst(camelCase(componentName));
-        return Path.resolve(__dirname, `src/components/${componentName}`, `${filename}.js`)
-      });
-    }
+    content: 'src/core/README.md',
   },
   {
     name: 'MUI Themes',
