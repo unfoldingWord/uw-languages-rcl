@@ -24,6 +24,18 @@ let sections = [
     }
   },
   {
+    name: 'Core',
+    components: () => {
+      const componentNames = [
+        'core',
+      ];
+      return componentNames.map(componentName => {
+        const filename = upperFirst(camelCase(componentName));
+        return Path.resolve(__dirname, `src/components/${componentName}`, `${filename}.js`)
+      });
+    }
+  },
+  {
     name: 'MUI Themes',
     content: 'src/MuiThemes.md',
   }
