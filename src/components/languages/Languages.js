@@ -7,15 +7,29 @@ import { TableCell } from '@material-ui/core';
 import { TableBody } from '@material-ui/core';
 import { TableRow } from '@material-ui/core';
 
-import {getLanguage} from '../../core/langnames.js'
+import { getLanguage } from '../../core/langnames.js'
 
-function Language({
-  classes,
+function Languages({
   name,
+  classes,
   style,
 }) {
   let _lang;
-  _lang = getLanguage({name})
+  _lang = getLanguage( name )
+  if ( _lang === undefined ) {
+    _lang = {
+      id: 0,
+      languageName: "unk",
+      region: "unk",
+      gateway: "unk",
+      country: "unk",
+      localized: "unk",
+      languageId: name,
+      direction: "unk",
+      aliases: "unk",
+      countries: "unk",
+    };
+  }
   return (
       <Table className={classes.root} style={style}>
         <TableHead>
@@ -66,7 +80,7 @@ function Language({
     );
 };
 
-Language.propTypes = {
+Languages.propTypes = {
   /** @ignore */
   classes: PropTypes.object.isRequired,
   /** The name of the language to display. */
@@ -80,4 +94,4 @@ const styles = theme => ({
   },
 });
 
-export default withStyles(styles)(Language);
+export default withStyles(styles)(Languages);
