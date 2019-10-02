@@ -15,8 +15,8 @@ export const getLanguage = (languageId) => {
       localized: langname.ln,
       languageId: langname.lc,
       direction: langname.ld,
-      aliases: langname.alt,
-      countries: langname.cc,
+      aliases: langname.alt.join(),
+      countries: langname.cc.join(),
     };
   }
   return language;
