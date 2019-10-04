@@ -1,5 +1,9 @@
 # Journal
 
+## Quick facts
+
+- Ctrl-Shift-J opens developer console
+
 ## Table of Contents
 
 - Daily Journal
@@ -10,6 +14,46 @@
 
 
 ## Daily Journal
+
+### 2019-10-04
+
+Goal: add a new component that will create a list of languages. This should take some options, potentially:
+- a format: 
+    - "uw" for a unfoldingWord standard format (whatever that is)
+    - "bcp47" for a standards compliant full language tag
+- a filter: to be applied to the selected format
+- a line limit: with a default of, say, 10
+
+So something like this:
+```
+<LanguageList format="bcp47" filter="" limit=10 />
+```
+
+To test interactively:
+```
+$ yarn start
+yarn run v1.17.3
+$ styleguidist server
+i ｢wds｣: Project is running at http://localhost:6060/
+i ｢wds｣: webpack output is served from undefined
+i ｢wds｣: Content not from webpack is served from C:\Users\mando\Projects\mandoly
+te\uw-languages-rcl
+You can now view your style guide in the browser:
+
+  Local:            http://localhost:6060/
+  On your network:  http://192.168.200.25:6060/
+
+```
+
+
+### 2019-10-02
+
+Adding commas to separate items in array of strings. In `langnames.js`, 
+added join method:
+```
+      aliases: langname.alt.join(),
+```
+
 
 ### 2019-09-28
 

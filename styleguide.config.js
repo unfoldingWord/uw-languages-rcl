@@ -24,6 +24,18 @@ let sections = [
     }
   },
   {
+    name: 'LanguageList',
+    components: () => {
+      const componentNames = [
+        'language_list',
+      ];
+      return componentNames.map(componentName => {
+        const filename = upperFirst(camelCase(componentName));
+        return Path.resolve(__dirname, `src/components/${componentName}`, `${filename}.js`)
+      });
+    }
+  },
+  {
     name: 'Core',
     content: 'src/core/README.md',
   },

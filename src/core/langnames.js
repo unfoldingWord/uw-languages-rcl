@@ -28,6 +28,40 @@ export const getLanguageName = ({languageId}) => {
   return languageName;
 };
 
+export const getLanguages = (format, filter, limit) => {
+  //console.log('format:'+format);
+  //console.log('filter:/'+filter+'/');
+  //console.log('limit:'+limit);
+  let langlist = [];
+  var x;
+  for (x of langnames) {
+    var item;
+    if (format === "uw") {
+      item = x.lc + "-" + x.ang + "-" + x.ln + "(" + x.lr + ")";
+    } else if (format === "bcp47") {
+      item = x.lc + "-" + x.hc;
+    } else {
+      // default to uw format
+      item = x.lc + "-" + x.ang + "-" + x.ln + "(" + x.lr + ")";    
+    }
+    if ( filter !== '' ) {
+      if (item.search(filter) > -1) {
+        //console.log("(filtered)pushing:"+item)
+        langlist.push(item);
+      }  
+    } else {
+      //console.log("(unfiltered)pushing:"+item)
+      langlist.push(item);
+    }
+    if ( langlist.length >= limit ) {
+      break;
+    }
+  }
+  //console.log("langlist.length="+langlist.length)
+  //console.log("langlist array:"+langlist)
+  return langlist;
+}
+
 /* Code graveyard
   const langname = langnames.filter(object => object.lc === languageId)[0];
 
