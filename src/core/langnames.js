@@ -1,31 +1,31 @@
 import langnames from './langnames.json';
 
-export const getLanguage = (languageId) => {
+export const getLanguage = (lc) => {
   let language;
-  const langname = langnames.filter(object => object.lc === languageId)[0];
+  const langname = langnames.filter(object => object.lc === lc)[0];
   
-  //console.log("found:"+langname)
+  //console.log("input:"+lc+", found:"+langname)
   if (langname) {
-    language = {
-      id: langname.pk,
-      languageName: langname.ang,
-      region: langname.lr,
-      gateway: langname.gw,
-      country: langname.hc,
-      localized: langname.ln,
-      languageId: langname.lc,
-      direction: langname.ld,
-      aliases: langname.alt.join(),
-      countries: langname.cc.join(),
-    };
+    language = langname;
   }
   return language;
 };
 
-export const getLanguageName = ({languageId}) => {
-  const language = getLanguage({languageId});
-  const languageName = language ? language.ln : null;
-  return languageName;
+export const getLanguageDisplay = (lc, format) => {
+  // pattern for uw format: (am) Amharic – አማርኛ (Africa Gateway)
+  const lg = getLanguage(lc);
+  let langdisplay;
+  if (lg) {
+    if (format === "lc-ang") {
+      langdisplay = lg.lc + "-" + lg.ang;
+    } else {
+      // default
+      langdisplay = "(" + lg.lc + ") " + lg.ang + " - " + lg.ln + " (" + lg.lr + " Gateway)"
+    }
+  } else {
+    langdisplay = "UNK"
+  }
+  return langdisplay;
 };
 
 export const getLanguages = (format, filter, limit) => {
@@ -36,16 +36,9 @@ export const getLanguages = (format, filter, limit) => {
   var x;
   for (x of langnames) {
     var item;
-    if (format === "uw") {
-      item = x.lc + "-" + x.ang + "-" + x.ln + "(" + x.lr + ")";
-    } else if (format === "bcp47") {
-      item = x.lc + "-" + x.hc;
-    } else {
-      // default to uw format
-      item = x.lc + "-" + x.ang + "-" + x.ln + "(" + x.lr + ")";    
-    }
+    item = getLanguageDisplay(x.lc,format);
     if ( filter !== '' ) {
-      if (item.search(filter) > -1) {
+      if (item.indexOf(filter) > -1) {
         //console.log("(filtered)pushing:"+item)
         langlist.push(item);
       }  

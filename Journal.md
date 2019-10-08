@@ -15,6 +15,29 @@
 
 ## Daily Journal
 
+### 2019-10-08
+
+After meeting with Jesse, my first task is to do some refactoring, namely:
+1. create two folders under `components`: one singular "language" and one plural "languages"
+2. Under `language`, move the current "Languages" component and rename it `languageAttributes`.
+3. Under `languages`, move the current "LanguageList" component
+
+Next add a new "Language" component that simply returns the uW format. In chat, Jesse said to use: 
+(am) Amharic – አማርኛ (Africa Gateway), which is:
+
+- language code in parentheses
+- the anglicized name
+- the localized name
+- the gateway region
+
+*Note also the idea of being able to override the default uW display.*
+
+Finally, the LanguageList component should be refactored to use the Language component. In other words, the LanguageList component would be made up of Language components.
+
+### 2019-10-07
+
+Today, I begin working an "edit" component. In many ways it will be simplar to the "languages" component. The requirements are captured in the DCS project `cecil.new/tD-DataRestructure`.
+
 ### 2019-10-04
 
 Goal: add a new component that will create a list of languages. This should take some options, potentially:
@@ -45,6 +68,7 @@ You can now view your style guide in the browser:
 
 ```
 
+Looks good... now commit, push, and run `yarn publish`
 
 ### 2019-10-02
 

@@ -5,7 +5,7 @@ import { List } from '@material-ui/core';
 import { ListItem } from '@material-ui/core';
 import { ListItemText } from '@material-ui/core';
 
-import { getLanguages } from '../../core/langnames.js'
+import { getLanguages } from '../../../core/langnames.js'
 
 function LanguageList({
   format,

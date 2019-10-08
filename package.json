@@ -1,6 +1,6 @@
 {
   "name": "uw-languages-rcl",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "description": "A React Component Library for Rendering Language Information.",
   "homepage": "https://mandolyte.github.io/uw-languages-rcl/",

@@ -2,7 +2,9 @@
 ### Simple example
 
 This is a component that shows a listing of matching languages.
-- `format` determines how the languages are displayed. Two formats are available: "uw" (default) and "bcp47"
+- `format` determines how the languages are displayed. Two formats are available: 
+    - "uw" (default) which displays like this: `(am) Amharic – አማርኛ (Africa Gateway)`
+    - "lc-ang" which displays like this: `am-Amharic`
 - `filter` is a search string and defaults to no filters
 - `limit` indicates how many results to return; the default is 10
 

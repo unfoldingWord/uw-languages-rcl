@@ -12,26 +12,28 @@ let sections = [
     content: 'README.md',
   },
   {
-    name: 'Languages',
+    name: 'Language',
     components: () => {
       const componentNames = [
-        'languages',
+        'language_attributes',
+        'language_display',
       ];
       return componentNames.map(componentName => {
         const filename = upperFirst(camelCase(componentName));
-        return Path.resolve(__dirname, `src/components/${componentName}`, `${filename}.js`)
+        const fpath = Path.resolve(__dirname, `src/components/language/${componentName}`, `${filename}.js`);
+        return fpath;
       });
     }
   },
   {
-    name: 'LanguageList',
+    name: 'Languages',
     components: () => {
       const componentNames = [
         'language_list',
       ];
       return componentNames.map(componentName => {
         const filename = upperFirst(camelCase(componentName));
-        return Path.resolve(__dirname, `src/components/${componentName}`, `${filename}.js`)
+        return Path.resolve(__dirname, `src/components/languages/${componentName}`, `${filename}.js`)
       });
     }
   },

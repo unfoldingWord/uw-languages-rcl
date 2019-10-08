@@ -6,7 +6,7 @@ This non-component function can also have a playground to test it out.
 import {getLanguage} from '../core/langnames.js'
 
 const name = "zzh";
-const value = getLanguage({name});
+const value = getLanguage(name);
 
-<>{value}</>
+<span>{value}</ span>
 ```

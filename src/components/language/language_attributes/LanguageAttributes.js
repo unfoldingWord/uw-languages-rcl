@@ -7,27 +7,27 @@ import { TableCell } from '@material-ui/core';
 import { TableBody } from '@material-ui/core';
 import { TableRow } from '@material-ui/core';
 
-import { getLanguage } from '../../core/langnames.js'
+import { getLanguage } from '../../../core/langnames.js'
 
-function Languages({
-  name,
+function LanguageAttributes({
+  lc,
   classes,
   style,
 }) {
   let _lang;
-  _lang = getLanguage( name )
+  _lang = getLanguage( lc )
   if ( _lang === undefined ) {
     _lang = {
       id: 0,
-      languageName: "unk",
-      region: "unk",
-      gateway: "unk",
-      country: "unk",
-      localized: "unk",
-      languageId: name,
-      direction: "unk",
-      aliases: "unk",
-      countries: "unk",
+      ang: "unk",
+      lr: "unk",
+      gw: "unk",
+      hc: "unk",
+      ln: "unk",
+      lc: lc,
+      ld: "unk",
+      alt: "unk",
+      cc: "unk",
     };
   }
   return (
@@ -40,51 +40,51 @@ function Languages({
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell>Language ID</TableCell>
-            <TableCell>{_lang.languageId}</TableCell>
+            <TableCell>Language Code</TableCell>
+            <TableCell>{_lang.lc}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Language Name</TableCell>
-            <TableCell>{_lang.languageName}</TableCell>
+            <TableCell>{_lang.ang}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Region</TableCell>
-            <TableCell>{_lang.region}</TableCell>
+            <TableCell>{_lang.lr}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Is Gateway?</TableCell>
-            <TableCell>{_lang.gateway}</TableCell>
+            <TableCell>Gateway</TableCell>
+            <TableCell>{_lang.gw}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Country</TableCell>
-            <TableCell>{_lang.country}</TableCell>
+            <TableCell>{_lang.hc}</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Localized</TableCell>
-            <TableCell>{_lang.localized}</TableCell>
+            <TableCell>Local Name</TableCell>
+            <TableCell>{_lang.ln}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Direction</TableCell>
-            <TableCell>{_lang.direction}</TableCell>
+            <TableCell>{_lang.ld}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Aliases</TableCell>
-            <TableCell>{_lang.aliases}</TableCell>
+            <TableCell>{_lang.alt.join()}</TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Countries</TableCell>
-            <TableCell>{_lang.countries}</TableCell>
+            <TableCell>{_lang.cc.join()}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
     );
 };
 
-Languages.propTypes = {
+LanguageAttributes.propTypes = {
   /** @ignore */
   classes: PropTypes.object.isRequired,
-  /** The name of the language to display. */
-  name: PropTypes.string.isRequired,
+  /** The language code of the language to display. */
+  lc: PropTypes.string.isRequired,
   /** The overriding CSS for this component */
   style: PropTypes.object,
 };
@@ -94,4 +94,4 @@ const styles = theme => ({
   },
 });
 
-export default withStyles(styles)(Languages);
+export default withStyles(styles)(LanguageAttributes);
