@@ -20,7 +20,7 @@ export const getLanguageDisplay = (lc, format) => {
       langdisplay = lg.lc + "-" + lg.ang;
     } else {
       // default
-      langdisplay = "(" + lg.lc + ") " + lg.ang + " - " + lg.ln + " (" + lg.lr + " Gateway)"
+      langdisplay = "(" + lg.lc + ") " + lg.ang + " - " + lg.ln + " (" + lg.lr + ")"
     }
   } else {
     langdisplay = "UNK"
