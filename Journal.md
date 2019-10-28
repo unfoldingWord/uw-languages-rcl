@@ -15,6 +15,18 @@
 
 ## Daily Journal
 
+### 2019-10-28
+
+This repo is now transferred to `unfoldingWord-box3`. Today I have worked on getting to work again. Here are the things I did:
+
+- Removed my copy of the repo and cloned the one from `unfoldingWord`.
+- Ran "yarn" to (re) install all the dependencies (note these are *not* part of the repo, but are a slew of node modules)
+- Bumped the rev in `package.json`
+- Ran `yarn start` to verify things worked locally
+- Committed and pushed code
+- Ran yarn publish
+
+
 ### 2019-10-08
 
 After meeting with Jesse, my first task is to do some refactoring, namely:

@@ -1,12 +1,12 @@
 {
   "name": "uw-languages-rcl",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "A React Component Library for Rendering Language Information.",
-  "homepage": "https://mandolyte.github.io/uw-languages-rcl/",
+  "homepage": "https://unfoldingWord-box3.github.io/uw-languages-rcl/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mandolyte/uw-languages-rcl"
+    "url": "https://github.com/unfoldingWord-box3/uw-languages-rcl"
   },
   "private": false,
   "dependencies": {
