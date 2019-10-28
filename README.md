@@ -1,5 +1,4 @@
-# uw-languages-rcl
-[https://unfoldingWord-box3.github.io/uw-languages-rcl/]https://unfoldingWord-box3.github.io/uw-languages-rcl/ 
+# [uw-languages-rcl](https://unfoldingWord-box3.github.io/uw-languages-rcl/)
 
 A React Component Library for Rendering Language Information
 
