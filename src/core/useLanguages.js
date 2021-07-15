@@ -1,4 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
+import useDeepCompareEffect from 'use-deep-compare-effect';
+
 
 /* The languages JSON is an array of objects. Sample:
 {
@@ -26,7 +28,7 @@ import { useState, useEffect, useCallback } from "react";
 const useLanguages = () => {
   const [languages, setLanguages] = useState([]);
 
-  useEffect( () => {
+  useDeepCompareEffect( () => {
     async function getLanguages() {
       const langs = (await fetch('https://td.unfoldingword.org/exports/langnames.json'))
       const _langs = await langs.json()
@@ -41,38 +43,44 @@ const useLanguages = () => {
   }, [languages]
   );
 
-  const allLanguages = () => {
-    return languages;
-  };
-
-  const language = useCallback((languageId) => {
-    const _language = languages && languages.filter(lang => lang.lc === languageId)[0];
-    if (_language) {
-      return _language;
-    }
-    return {};  
-  }, [languages]);
-  
-  const languageFormatted = (languageId) => {
+  const formatLanguage = useCallback((lg) => {
     // pattern for uw format: (am) Amharic – አማርኛ (Africa Gateway)
-    const lg = language(languageId);
-    console.log("languageFormatted() languageId, lg:", languageId, lg)
     const lc = lg.lc ? lg.lc : 'UNK';
     const ang = lg.ang ? lg.ang : 'UNK';
     const ln = lg.ln ? lg.ln : 'UNK';
     const lr = lg.lr ? lg.lr : 'UNK';
     return `(${lc}) ${ang} - ${ln} (${lr})`
-  };
+  }, [languages]);
   
-  const languagesByOrg = (org) => {
-    // tbd
-  }
+  const getAllLanguages = () => {
+    return languages;
+  };
+
+  const getLanguage = useCallback((languageId) => {
+    console.log("language() size of list:",languages.length);
+    for (let i=0; i<languages.length; i++) {
+      if (languages[i].lc === languageId) {
+        return languages[i]
+      }
+    }
+    return {};  
+  }, [languages]);
+  
+  const getGatewayLanguages = useCallback(() => {
+    let _languages = [];
+    for (let i=0; i<languages.length; i++) {
+      if (languages[i].gw) {
+        _languages.push( formatLanguage(languages[i]) )
+      }
+    }
+    return _languages;
+  }, [languages]);
 
   const actions = {
-    allLanguages,
-    language,
-    languageFormatted,
-    languagesByOrg,
+    getAllLanguages,
+    getLanguage,
+    getGatewayLanguages,
+    formatLanguage,
   };
 
 

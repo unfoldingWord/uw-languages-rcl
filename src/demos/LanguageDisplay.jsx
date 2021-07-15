@@ -7,7 +7,7 @@ function LanguageDisplay({ lc }) {
   return (
     <>
     <div>Total number of languages is: {state.length}</div>
-    <div>{actions.languageFormatted(lc)}</div>
+    <div>{actions.formatLanguage(actions.getLanguage(lc))}</div>
     </>
   )
 };
