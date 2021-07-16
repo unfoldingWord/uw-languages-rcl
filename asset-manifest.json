@@ -1,14 +1,11 @@
 {
   "files": {
-    "main.js": "/uw-languages-rcl/build/main.05fed174.js",
-    "runtime-main.js": "/uw-languages-rcl/build/bundle.b50e26a4.js",
-    "build/2.78fd07bc.js": "/uw-languages-rcl/build/2.78fd07bc.js",
-    "build/2.78fd07bc.js.LICENSE.txt": "/uw-languages-rcl/build/2.78fd07bc.js.LICENSE.txt",
-    "index.html": "/uw-languages-rcl/index.html"
-  },
-  "entrypoints": [
-    "build/bundle.b50e26a4.js",
-    "build/2.78fd07bc.js",
-    "build/main.05fed174.js"
-  ]
+    "main.js": "/uw-languages-rcl/build/main.666516a3.js",
+    "runtime~main.js": "/uw-languages-rcl/build/bundle.7c28f4d3.js",
+    "build/2.7f252e96.js": "/uw-languages-rcl/build/2.7f252e96.js",
+    "build/2.7f252e96.js.LICENSE.txt": "/uw-languages-rcl/build/2.7f252e96.js.LICENSE.txt",
+    "index.html": "/uw-languages-rcl/index.html",
+    "precache-manifest.9dacdba78c24ccc67a88988ddd5d245f.js": "/uw-languages-rcl/precache-manifest.9dacdba78c24ccc67a88988ddd5d245f.js",
+    "service-worker.js": "/uw-languages-rcl/service-worker.js"
+  }
 }
