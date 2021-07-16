@@ -25,7 +25,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 },
 */
 
-const useLanguages = () => {
+function useLanguages() {
   const [languages, setLanguages] = useState([]);
 
   useDeepCompareEffect( () => {
