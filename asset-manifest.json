@@ -1,6 +1,14 @@
 {
-  "build/0.b564da9f.js": "/build/0.b564da9f.js",
-  "main.js": "/build/main.02596605.js",
-  "runtime~main.js": "/build/bundle.7b491809.js",
-  "index.html": "/index.html"
+  "files": {
+    "main.js": "/uw-languages-rcl/build/main.05fed174.js",
+    "runtime-main.js": "/uw-languages-rcl/build/bundle.b50e26a4.js",
+    "build/2.78fd07bc.js": "/uw-languages-rcl/build/2.78fd07bc.js",
+    "build/2.78fd07bc.js.LICENSE.txt": "/uw-languages-rcl/build/2.78fd07bc.js.LICENSE.txt",
+    "index.html": "/uw-languages-rcl/index.html"
+  },
+  "entrypoints": [
+    "build/bundle.b50e26a4.js",
+    "build/2.78fd07bc.js",
+    "build/main.05fed174.js"
+  ]
 }
