@@ -1,12 +1,11 @@
-## getLanguage = ({languageId})
+### Example
 
 This non-component function can also have a playground to test it out.
 
 ```js
-import {getLanguage} from '../core/langnames.js'
+import useLanguage from './useLanguage'
 
-const name = "zzh";
-const value = getLanguage(name);
+const {state, actions} = useLanguage()
 
-<span>{value}</ span>
+return (<pre>{state}</pre>)
 ```

@@ -1,11 +1,11 @@
 # [uw-languages-rcl](https://unfoldingWord-box3.github.io/uw-languages-rcl/)
 
-A React Component Library for Rendering Language Information
+A React Component Library for Languages
 
-At first, this library will only a single component which will show
-the information about a language. The source information will be
-from a JSON file `langnames.json`. This is an array of JSON snippets,
-one per language. Here is an example of a language snippet:
+The source information will be from a JSON file `langnames.json` [here](https://td.unfoldingword.org/exports/langnames.json). 
+This is an array of objects, one per language. 
+
+Here is an example:
 
 ```json
 {
@@ -31,24 +31,7 @@ one per language. Here is an example of a language snippet:
 }
 ```
 
-It will be displayed as a *property* table, with two columns: 
-- Property Name
-- Property Value
+The package essentially provide a custom React Hook which returns
+state and actions (a small set of functions to use for language data).
 
-For example, using above:
-
-|Attribute|Value|
-|---------|:----|
-|Language ID|zzj|
-|Language Name|Zhuang, Zuojiang|
-|Region|Asia|
-|Is Gateway?|false|
-|Country|CN|
-|Localized|\u5de6\u6c5f|
-|Direction|ltr|
-|Aliases|Ken Tho, Longyin, Longzhou, Pho Thai, Southern Zhuang, Zhuangyu nanbu fangyan Zuojiang tuyu, Nung Chao|
-|Countries|CN|
-
-
-**In some cases the value will be a list, such as the countries that a
-in which a language is spoken.**
+The code in the `demos` folder are examples of using the custom hook.
