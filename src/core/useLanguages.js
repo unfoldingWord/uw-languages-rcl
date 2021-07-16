@@ -38,7 +38,6 @@ const useLanguages = () => {
     if (languages.length === 0) {
       console.log("languages is empty... fetching")
       getLanguages();
-      console.log("languages:",languages)
     }
   }, [languages]
   );
@@ -50,14 +49,13 @@ const useLanguages = () => {
     const ln = lg.ln ? lg.ln : 'UNK';
     const lr = lg.lr ? lg.lr : 'UNK';
     return `(${lc}) ${ang} - ${ln} (${lr})`
-  }, [languages]);
+  }, []);
   
   const getAllLanguages = () => {
     return languages;
   };
 
   const getLanguage = useCallback((languageId) => {
-    console.log("language() size of list:",languages.length);
     for (let i=0; i<languages.length; i++) {
       if (languages[i].lc === languageId) {
         return languages[i]
@@ -74,7 +72,7 @@ const useLanguages = () => {
       }
     }
     return _languages;
-  }, [languages]);
+  }, [languages, formatLanguage]);
 
   const actions = {
     getAllLanguages,
