@@ -1,8 +1,8 @@
 import React from 'react';
-import useLanguage from '../core/useLanguages'
+import useLanguages from '../core/useLanguages'
 
 function GatewayLanguages({ lc }) {
-  const {state, actions} = useLanguage()
+  const {state, actions} = useLanguages()
 
   return (
     <>
