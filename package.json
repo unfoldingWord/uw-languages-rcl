@@ -1,6 +1,6 @@
 {
   "name": "uw-languages-rcl",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "license": "MIT",
   "description": "A React Component Library for Language Information.",
   "homepage": "https://unfoldingWord-box3.github.io/uw-languages-rcl/",
@@ -26,6 +26,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "babel-loader": "^8.2.2",
     "core-js": "^3.15.2",
     "react": "^16.14.0",
