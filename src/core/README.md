@@ -1,4 +1,4 @@
-## getLanguage = ({languageId})
+### Example
 
 This non-component function can also have a playground to test it out.
 
