@@ -14,6 +14,6 @@ const { state, actions } = useLanguages();
 <div>
 <p>Total Number of Languages is: {state.length}</p>
 <p>{actions.formatLanguage(actions.getLanguage('vi'))}</p>
-<LanguageDisplay lc='vi' />
+<LanguageDisplay lc='zzj' />
 </div>
 ```

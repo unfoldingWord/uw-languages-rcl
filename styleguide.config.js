@@ -9,16 +9,20 @@ module.exports = {
   },
   styles,
   theme,
-  components: 'src/**/[A-Z]*.{js,jsx}',
-  webpackConfig: {
-    module: {
-      rules: [
-        {
-          test: /\.jsx?$/,
-          exclude: /node_modules/,
-          loader: 'babel-loader',
-        },
-      ],
-    },
-  },
+  components: 'src/demos/[A-Z]*.{js,jsx}',
+	webpackConfig: {
+		module: {
+			rules: [
+				{
+					test: /\.jsx?$/,
+					exclude: /node_modules/,
+					loader: 'babel-loader',
+				},
+				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader'],
+				},
+			],
+		},
+	},
 }
