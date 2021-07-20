@@ -3,10 +3,10 @@
   "version": "0.2.15",
   "license": "MIT",
   "description": "A React Component Library for Language Information.",
-  "homepage": "https://unfoldingWord-box3.github.io/uw-languages-rcl/",
+  "homepage": "https://unfoldingWord.github.io/uw-languages-rcl/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/unfoldingWord-box3/uw-languages-rcl"
+    "url": "https://github.com/unfoldingWord/uw-languages-rcl"
   },
   "private": false,
   "scripts": {
