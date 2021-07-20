@@ -35,3 +35,18 @@ The package essentially provide a custom React Hook which returns
 state and actions (a small set of functions to use for language data).
 
 The code in the `demos` folder are examples of using the custom hook.
+
+## General Language Information
+
+The Library of Congress has a list of language names with both 
+two and three character codes (ISO 639-1 and 639-2, respectively).
+Link: https://www.loc.gov/standards/iso639-2/php/English_list.php
+
+The site https://iso639-3.sil.org/ has a link to download a number of 
+language tables in TSV format (easy to import into a spreadsheet).
+
+Direct link to download the tables:
+https://iso639-3.sil.org/code_tables/download_tables
+
+Of the ones available, this one combines common useful info:
+https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab
