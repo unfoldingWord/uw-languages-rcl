@@ -36,7 +36,7 @@ export function useLanguages() {
     }
 
     if (languages.length === 0) {
-      console.log("languages is empty... fetching")
+      //console.log("languages is empty... fetching")
       getLanguages();
     }
   }, [languages]

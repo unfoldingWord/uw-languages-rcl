@@ -9,11 +9,15 @@ This is a component that displays the language in the standard format.
 // imports can only be added in the markdown itself, not online.
 // since this demo has the import, this demo can be used as a playground
 import useLanguages from '../core/useLanguages.js';
-const { state, actions } = useLanguages();
-;
-<div>
-<p>Total Number of Languages is: {state.length}</p>
-<p>{actions.formatLanguage(actions.getLanguage('vi'))}</p>
-<LanguageDisplay lc='zzj' />
-</div>
+function Component() {
+  const { state, actions } = useLanguages();
+  return (
+    <div>
+    <p>Total Number of Languages is: {state.length}</p>
+    <p>{actions.formatLanguage(actions.getLanguage('vi'))}</p>
+    <LanguageDisplay lc='zzj' />
+    </div>
+  );
+};
+<Component />
 ```
