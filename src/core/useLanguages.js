@@ -30,7 +30,7 @@ export function useLanguages() {
 
   useDeepCompareEffect( () => {
     async function getLanguages() {
-      const langs = (await fetch('https://td.unfoldingword.org/exports/langnames.json'))
+      const langs = (await fetch('https://td2.unfoldingword.org/exports/langnames.json'))
       const _langs = await langs.json()
       setLanguages(_langs);
     }

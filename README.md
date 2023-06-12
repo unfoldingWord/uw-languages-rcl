@@ -2,7 +2,7 @@
 
 A React Component Library for Languages
 
-The source information will be from a JSON file `langnames.json` [here](https://td.unfoldingword.org/exports/langnames.json). 
+The source information will be from a JSON file `langnames.json` [here](https://td2.unfoldingword.org/exports/langnames.json). 
 This is an array of objects, one per language. 
 
 Here is an example:
