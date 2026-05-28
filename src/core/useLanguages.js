@@ -1,6 +1,6 @@
-import { useState, useCallback } from "react";
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import { useState, useCallback, useEffect } from "react";
 
+const URL = 'https://git.door43.org/api/v1/languages/langnames.json';
 
 /* The languages JSON is an array of objects. Sample:
 {
@@ -25,22 +25,32 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 },
 */
 
-export function useLanguages() {
-  const [languages, setLanguages] = useState([]);
+export function useLanguages({ defaultLanguages = null }) {
+  const [languages, setLanguages] = useState(defaultLanguages || []);
+  const [languagesFetched, setLanguagesFetched] = useState(false);
 
-  useDeepCompareEffect( () => {
+  useEffect( () => {
     async function getLanguages() {
-      const langs = (await fetch('https://td2.unfoldingword.org/exports/langnames.json'))
-      const _langs = await langs.json()
-      setLanguages(_langs);
+      try {
+        const response = await fetch(URL);
+
+        if (!response.ok) {
+          throw new Error(`Failed to fetch languages: ${response.status} ${response.statusText}`);
+        }
+
+        const _langs = await response.json();
+        setLanguagesFetched(true);
+        setLanguages(_langs);
+      } catch (error) {
+        console.error(`Error fetching languages from ${URL}:`, error);
+      }
     }
 
-    if (languages.length === 0) {
+    if (!languagesFetched) {
       //console.log("languages is empty... fetching")
       getLanguages();
     }
-  }, [languages]
-  );
+  }, [languagesFetched]);
 
   const formatLanguage = useCallback((lg) => {
     // pattern for uw format: (am) Amharic – አማርኛ (Africa Gateway)
